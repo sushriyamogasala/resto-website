@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+:root{
+    --green:#27ae60;
+    --black:#192a56;
+    --light-color:#666;
+    --box-shadow:0 0.5rem 1.5rem rgba(0,0,0,0.1);
+}
+
+
+*{
+    font-family:  'Nunito','sanf-serif';
+    margin:0;
+    padding:0;
+    text-decoration: none;
+    outline:none;
+    border:none;
+    text-transform: capitalize;
+    transition: all 0.3s linear;
+}
+
+html{
+    font-size: 62%;
+    overflow-x:hidden;
+    scroll-padding-top:5.5rem;
+    scroll-behavior: smooth;
+}
+header{
+    position: fixed;
+    top:0;left: 0;right: 0;
+    padding:1rem 7%;
+    display:flex;
+    background:white;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--box-shadow);
+    z-index:1000;
+
+}
+
+header .logo{
+    color:var(--black);
+    font-size:2.5rem;
+    font-weight:bolder;
+    text-transform: uppercase ;
+
+}
+
+header .logo i{
+    color:var(--green);
+}
+
+header .navbar a{
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    padding:0.5rem 1.5rem;
+    color:var(--light-color);
+}
+header .navbar a.active,header .navbar a:hover{
+    color:white;
+    background:var(--green);
+}
+
+header .icons a,header .icons i{
+    cursor:pointer;
+    margin-left: .5rem;
+    height:4.5rem;
+    width:4.5rem;
+    text-align: center;
+    font-size: 1.7rem;
+    color: var(--black);
+    border-radius: 50%;
+    line-height: 4.5rem;
+    background: #eee;
+}
+
+header .icons a:hover,
+header .icons i:hover{
+    background-color: var(--green);
+    color:white;
+     transform:rotate(720deg);
+}
+
+ .rotate{
+    animation:rotation 2s infinite linear;
+} 
+ @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  } 
+  header .icons #bars{
+      display:none;
+  }
+ @media (max-width:991px){
+     html{
+         font-size: 55%;
+     }
+     header{
+         padding :1rem 2rem;
+     }
+ }
+ @media (max-width:768px)
+ {
+    header .icons #bars{
+        display:inline-block;
+    }
+    header .navbar{
+        position: absoulute;
+        top:100%;left: 0;right: 0;
+        background-color: white;
+        padding:1rem;
+        border-top: 0.1rem solid rgba(0,0,0,0.2);
+        border-bottom: 0.1rem solid rgba(0,0,0,0.2);
+        clip-path:polygon(0 0,100% 0,100% 0,0 0);
+    }
+    header .navbar.active{
+        clip-path:polygon(0 0,100% 0,100% 0,0 0);   
+    }
+
+
+    header .navbar a{
+        display:block;
+        padding:1.5rem;
+        margin:1rem;
+        font-size:2rem;
+        background-color: #eee;
+    }
+ }
+ @media (max-width:991px){
+    html{
+        font-size: 50%;
+    }
+   
+}
+
+.home{
+    display: flex ;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    gap: 2rem;
+    position:relative;
+    overflow:hidden;
+}
